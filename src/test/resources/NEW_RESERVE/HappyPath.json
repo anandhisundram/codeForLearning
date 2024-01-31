@@ -1,0 +1,24 @@
+{
+	"context":
+	{
+		"action":"reserve",
+		"userId":"ashanmu"
+	},
+	"payload":{
+		"trainDetails":{
+			"trainId":"ABHU1234",
+			"fromLocation":"Chennai",
+			"toLocation": "Madurai"
+			
+		},
+		"usersDetails":[{
+			"userId":"ashanmu3",
+			"fName":"Anandhi",
+			"lName":"S",
+			"emailId":"happygal.anandhi@gmail.com",
+			"age":"33"
+		}],
+		"status":"initiated",
+		"paidAmmount":"1000_INR"
+	}
+}

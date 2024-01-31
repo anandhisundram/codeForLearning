@@ -3,13 +3,15 @@ package com.practise.app.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 import java.util.function.Predicate;
+
+import org.springframework.stereotype.Component;
 
 import com.practise.app.models.BookedTickets;
 import com.practise.app.models.TrainReservDetails;
 import com.practise.app.service.ITrainReserveSystem;
 
+@Component
 public class TrainReservationSystem implements ITrainReserveSystem{
 	
 	private static List<TrainReservDetails> reservationList=new ArrayList<>();
@@ -49,11 +51,12 @@ public class TrainReservationSystem implements ITrainReserveSystem{
 				//throw NoSeatAvailableException();
 			}
 			bt.addUser(user);
+			bt.setTrainId(trainId);
 		});
 		});
 		
 		reservationList.add(reservDetails);
-		return null;
+		return reservDetails;
 	}
 
 	@Override

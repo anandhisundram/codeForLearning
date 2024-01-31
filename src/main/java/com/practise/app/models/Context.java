@@ -1,8 +1,11 @@
 package com.practise.app.models;
 
+import org.springframework.stereotype.Component;
+
 /**
  * 
  */
+@Component
 public class Context {
 	String action;
 	String userId;

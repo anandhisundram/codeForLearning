@@ -11,7 +11,7 @@ public class TrainReservDetails {
 
 	String status;
 
-	HashMap<String, String> allottedUserSeats;
+	HashMap<String, String> allottedUserSeats=new HashMap<>();
 
 	String paidAmount;
 

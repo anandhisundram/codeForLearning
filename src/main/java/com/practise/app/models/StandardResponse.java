@@ -2,36 +2,36 @@ package com.practise.app.models;
 
 import java.util.List;
 
-public class StandardResponse {
+import org.springframework.stereotype.Component;
+
+@Component
+public class StandardResponse<T>{
 	/**
 	 * 
 	 */
-	Context context;
-	Payload payload;
+	T responseObj;
 	List<ErrorCode> errorCode;
+	
+	
 	/**
-	 * @return the context
+	 * @return the responseObj
 	 */
-	public Context getContext() {
-		return context;
+	public T getResponseObj() {
+		return responseObj;
 	}
 	/**
-	 * @param context the context to set
+	 * @param responseObj the responseObj to set
 	 */
-	public void setContext(Context context) {
-		this.context = context;
+	public void setResponseObj(T responseObj) {
+		this.responseObj = responseObj;
 	}
-	/**
-	 * @return the payload
-	 */
-	public Payload getPayload() {
-		return payload;
-	}
-	/**
-	 * @param payload the payload to set
-	 */
-	public void setPayload(Payload payload) {
-		this.payload = payload;
+	
+	public StandardResponse()
+	{}
+	
+	public StandardResponse(T responseObj)
+	{
+		this.responseObj=responseObj;
 	}
 	/**
 	 * @return the errorCode

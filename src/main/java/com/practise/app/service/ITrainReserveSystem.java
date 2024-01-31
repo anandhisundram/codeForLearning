@@ -5,13 +5,13 @@ import java.util.List;
 import com.practise.app.models.TrainReservDetails;
 
 public interface ITrainReserveSystem {
-	
-public TrainReservDetails reserveTrain(final String reqUserId, final TrainReservDetails reservDetails);
 
-public List<TrainReservDetails> getDetailsOfSection(final String sectionType);
+	public TrainReservDetails reserveTrain(final String reqUserId, final TrainReservDetails reservDetails);
 
-public void removeUser(final String userId, final String trainId);
+	public List<TrainReservDetails> getDetailsOfSection(final String sectionType);
 
-public String modifySeat(final String userId, final String trainId, final String currentSeat);
+	public void removeUser(final String userId, final String trainId);
+
+	public String modifySeat(final String userId, final String trainId, final String currentSeat);
 
 }

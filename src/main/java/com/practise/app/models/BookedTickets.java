@@ -1,15 +1,20 @@
 package com.practise.app.models;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class BookedTickets {
 	
 	String trainId;
-	List<User> bookedUsers;
-	Map<String,List<String>> availableSeats;
-	Map<String,List<String>> bookedSeats;
+	List<User> bookedUsers=new ArrayList<>();
+	static public Map<String,List<String>> availableSeats=new HashMap<>();
+	static public Map<String,List<String>> bookedSeats=new HashMap<>();
 	
 	public void addUser(User user)
 	{
