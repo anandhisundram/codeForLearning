@@ -7,41 +7,19 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration;
 
 import com.practise.app.models.BookedTickets;
+import com.practise.app.service.impl.TrainReservationSystem;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = { SecurityAutoConfiguration.class, UserDetailsServiceAutoConfiguration.class })
 public class TrainReservationSystemApplication {
-
-	@Autowired
-	static  BookedTickets bookedTickets;
-
-	 static void initializeStorageData() {
-		 bookedTickets=new BookedTickets();
-		bookedTickets.setTrainId("ABU12345");
-
-		bookedTickets.setAvailableSeats(new HashMap<String, List<String>>() {
-			{
-				put("SectionA", Arrays.asList("10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"));
-				put("SectionB", Arrays.asList("10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"));
-
-			}
-		});
-
-		bookedTickets.setBookedSeats(new HashMap<String, List<String>>() {
-			{
-				put("SectionA", Arrays.asList());
-				put("SectionB", Arrays.asList());
-			}
-		});
-
-	}
 
 	public static void main(String[] args) {
 
 		SpringApplication.run(TrainReservationSystemApplication.class, args);
 
-		initializeStorageData();
 	}
 
 }

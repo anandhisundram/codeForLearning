@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 
 public class TrainReservDetails {
+	
+	String trainRefId;
 
 	Train trainDetails;
 
@@ -14,6 +16,20 @@ public class TrainReservDetails {
 	HashMap<String, String> allottedUserSeats=new HashMap<>();
 
 	String paidAmount;
+	
+	/**
+	 * @return the trainRefId
+	 */
+	public String getTrainRefId() {
+		return trainRefId;
+	}
+
+	/**
+	 * @param trainRefId the trainRefId to set
+	 */
+	public void setTrainRefId(String trainRefId) {
+		this.trainRefId = trainRefId;
+	}
 
 	/**
 	 * @return the trainDetails
